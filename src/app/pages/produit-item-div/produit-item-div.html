@@ -1,6 +1,11 @@
-<li>
-  <div class="produit-item-column">{{ produit?.id }}</div>
-  <div class="produit-item-column">{{ produit?.nom }}</div>
-  <div class="produit-item-column">{{ produit?.prix }}</div>
-  <div class="produit-item-column">{{ produit?.quantite }}</div>
+<li class="produit-item">
+  <div class="produit-item-column id">{{ produit?.id }}</div>
+  <div class="produit-item-column name">{{ produit?.nom }}</div>
+  <div class="produit-item-column price">{{ produit?.prix }} €</div>
+  <div class="produit-item-column stock">
+    <span class="badge">{{ produit?.quantite }} en stock</span>
+  </div>
+  <div class="produit-item-column actions">
+     <button class="btn-edit">Modifier</button>
+  </div>
 </li>

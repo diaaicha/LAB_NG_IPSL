@@ -1,0 +1,125 @@
+// Variables
+$primary: #4f46e5;
+$text-dark: #1f2937;
+$text-light: #6b7280;
+$bg-app: #f9fafb;
+$white: #ffffff;
+$shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+.container {
+  font-family: 'Inter', system-ui, sans-serif;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  color: $text-dark;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: $text-dark;
+  border-left: 5px solid $primary;
+  padding-left: 1rem;
+}
+
+.liste-wrapper {
+  background: $white;
+  border-radius: 12px;
+  box-shadow: $shadow;
+  overflow: hidden; // Pour les bordures arrondies
+}
+
+// En-tête du tableau
+.table-header {
+  display: flex;
+  background: #f3f4f6;
+  padding: 1rem;
+  font-weight: 600;
+  color: $text-light;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.liste {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .produit-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #f9fafb;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+// Colonnes
+.produit-item-column, .column-header {
+  flex: 1;
+  padding: 0 0.5rem;
+  
+  &.id { 
+    max-width: 60px; 
+    color: $text-light;
+    font-size: 0.8rem;
+  }
+  &.name { 
+    font-weight: 500; 
+    flex: 2; // Le nom prend plus de place
+  }
+  &.price { 
+    font-weight: 600;
+    color: $primary;
+  }
+}
+
+// Badge de quantité
+.badge {
+  background: #ecfdf5;
+  color: #065f46;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+// État de chargement
+.enChargement {
+  padding: 3rem;
+  text-align: center;
+  color: $text-light;
+  
+  .loader {
+    display: block;
+    margin: 0 auto 1rem;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #e5e7eb;
+    border-top-color: $primary;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: $text-light;
+  padding: 1rem;
+}
