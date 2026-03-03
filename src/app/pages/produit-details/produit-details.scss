@@ -1,0 +1,32 @@
+.details-container {
+  max-width: 600px;
+  margin: 3rem auto;
+}
+
+.details-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-edit {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+}
+
+.btn-back {
+  background: #e5e7eb;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+}

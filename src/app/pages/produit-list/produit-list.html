@@ -21,7 +21,11 @@
 
     <ul class="liste">
       @for (produit of produits; track produit.id; let i = $index) {
-        <app-produit-item-div [produit]="produit"></app-produit-item-div>
+        <app-produit-item-div
+          [produit]="produit"
+          (deleteEvent)="supprimerProduit($event)">
+        </app-produit-item-div>
+
       }
     </ul>
   </div>

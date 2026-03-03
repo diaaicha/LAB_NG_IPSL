@@ -1,11 +1,35 @@
 <li class="produit-item">
-  <div class="produit-item-column id">{{ produit?.id }}</div>
-  <div class="produit-item-column name">{{ produit?.nom }}</div>
-  <div class="produit-item-column price">{{ produit?.prix }} €</div>
-  <div class="produit-item-column stock">
-    <span class="badge">{{ produit?.quantite }} en stock</span>
+  <div class="produit-item-column id">
+    {{ produit?.id }}
   </div>
+
+  <div class="produit-item-column name">
+    <a 
+      [routerLink]="['/produits/detail', produit?.id]" 
+      class="produit-link">
+      {{ produit?.nom }}
+    </a>
+  </div>
+
+  <div class="produit-item-column price">
+    {{ produit?.prix }} €
+  </div>
+
+  <div class="produit-item-column stock">
+    <span class="badge">
+      {{ produit?.quantite }} en stock
+    </span>
+  </div>
+
   <div class="produit-item-column actions">
-     <button class="btn-edit" [routerLink]="['/produits',produit?.id]">Modifier</button>
+    <button class="btn-edit"
+            [routerLink]="['/produits', produit?.id]">
+      Modifier
+    </button>
+
+    <button class="btn-delete"
+            (click)="supprimerProduit()">
+      Supprimer
+    </button>
   </div>
 </li>

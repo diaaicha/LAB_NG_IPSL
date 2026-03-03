@@ -1,1 +1,22 @@
-<p>produit-details works!</p>
+<div class="details-container" *ngIf="!loading && produit">
+
+  <h2>{{ produit.nom }}</h2>
+
+  <div class="details-card">
+    <p><strong>ID :</strong> {{ produit.id }}</p>
+    <p><strong>Prix :</strong> {{ produit.prix }} €</p>
+    <p><strong>Quantité :</strong> {{ produit.quantite }}</p>
+    <p><strong>Description :</strong> {{ produit.description || 'Aucune description' }}</p>
+  </div>
+
+  <div class="actions">
+    <button [routerLink]="['/produits', produit.id]" class="btn-edit">
+      Modifier
+    </button>
+
+    <button routerLink="/produits" class="btn-back">
+      Retour
+    </button>
+  </div>
+
+</div>

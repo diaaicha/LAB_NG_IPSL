@@ -38,5 +38,18 @@ export class ProduitList implements OnInit{
     });
   }
 
+  supprimerProduit(id: number) {
+
+    this.produitService.delete(id).subscribe({
+      next: () => {
+        this.loadProduits(); 
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
+
+
 
 }
